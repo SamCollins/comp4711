@@ -8,11 +8,12 @@
 
 /**
  * Description of Student
- *
+ * Lab 1
  * @author Sam Collins
  */
 class Student {
     
+    //Creates a new Student object
     function __construct() {
         $this->surname = '';
         $this->first_name = '';    
@@ -21,14 +22,17 @@ class Student {
 
     }
     
+    //Adds an email to a student
     function add_email($which, $address) {
         $this->emails[$which] = $address;
     }
     
+    //Adds a grade to a student
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
     
+    //Calculates the students average based on their grades
     function average() {
         $total = 0;
         foreach ($this->grades as $value) {
@@ -37,6 +41,7 @@ class Student {
         return $total / count($this->grades);
     }
     
+    //Displays all the info about a student as a string
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' ('.$this->average().")\n";
